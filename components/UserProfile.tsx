@@ -18,16 +18,16 @@ const UserProfile: React.FC<UserProfileProps> = ({ age, weight, height, fitnessG
     <div className="p-4 border rounded shadow">
       <h2 className="text-2xl font-bold mb-2">User Profile</h2>
       <label>Age: 
-        <input type="number" name="age" value={profile.age} onChange={handleInputChange} />
+        <input type="number" name="age" value={profile.age} onChange={handleInputChange} className="text-black" />
       </label>
       <label>Weight: 
-        <input type="number" name="weight" value={profile.weight} onChange={handleInputChange} />
+        <input type="number" name="weight" value={profile.weight} onChange={handleInputChange} className="text-black" />
       </label>
       <label>Height: 
-        <input type="number" name="height" value={profile.height} onChange={handleInputChange} />
+        <input type="number" name="height" value={profile.height} onChange={handleInputChange} className="text-black" />
       </label>
       <label>Fitness Goals: 
-        <input type="text" name="fitnessGoals" value={profile.fitnessGoals} onChange={handleInputChange} />
+        <input type="text" name="fitnessGoals" value={profile.fitnessGoals} onChange={handleInputChange} className="text-black" />
       </label>
     </div>
   );
