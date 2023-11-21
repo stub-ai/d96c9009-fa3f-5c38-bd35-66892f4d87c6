@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 interface WorkoutLogProps {
   duration: number;
@@ -8,8 +8,8 @@ interface WorkoutLogProps {
 
 const WorkoutLog: React.FC<WorkoutLogProps> = ({ duration, intensity, exercises }) => {
   return (
-    <div>
-      <h2>Workout Log</h2>
+    <div className="p-4 border rounded shadow">
+      <h2 className="text-2xl font-bold mb-2">Workout Log</h2>
       <p>Duration: {duration}</p>
       <p>Intensity: {intensity}</p>
       <p>Exercises: {exercises.join(', ')}</p>

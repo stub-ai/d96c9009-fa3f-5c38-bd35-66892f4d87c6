@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 interface UserProfileProps {
   age: number;
@@ -9,8 +9,8 @@ interface UserProfileProps {
 
 const UserProfile: React.FC<UserProfileProps> = ({ age, weight, height, fitnessGoals }) => {
   return (
-    <div>
-      <h2>User Profile</h2>
+    <div className="p-4 border rounded shadow">
+      <h2 className="text-2xl font-bold mb-2">User Profile</h2>
       <p>Age: {age}</p>
       <p>Weight: {weight}</p>
       <p>Height: {height}</p>
