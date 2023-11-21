@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 interface UserProfileProps {
   age: number;
@@ -8,13 +8,27 @@ interface UserProfileProps {
 }
 
 const UserProfile: React.FC<UserProfileProps> = ({ age, weight, height, fitnessGoals }) => {
+  const [profile, setProfile] = useState({ age, weight, height, fitnessGoals });
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setProfile({ ...profile, [event.target.name]: event.target.value });
+  };
+
   return (
     <div className="p-4 border rounded shadow">
       <h2 className="text-2xl font-bold mb-2">User Profile</h2>
-      <p>Age: {age}</p>
-      <p>Weight: {weight}</p>
-      <p>Height: {height}</p>
-      <p>Fitness Goals: {fitnessGoals}</p>
+      <label>Age: 
+        <input type="number" name="age" value={profile.age} onChange={handleInputChange} />
+      </label>
+      <label>Weight: 
+        <input type="number" name="weight" value={profile.weight} onChange={handleInputChange} />
+      </label>
+      <label>Height: 
+        <input type="number" name="height" value={profile.height} onChange={handleInputChange} />
+      </label>
+      <label>Fitness Goals: 
+        <input type="text" name="fitnessGoals" value={profile.fitnessGoals} onChange={handleInputChange} />
+      </label>
     </div>
   );
 };
